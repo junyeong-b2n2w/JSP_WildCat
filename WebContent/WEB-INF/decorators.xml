@@ -1,0 +1,19 @@
+<decorators defaultdir="/WEB-INF/views/decorators">
+
+
+
+	<decorator name="inner" page="inner_decorator.jsp">
+		<pattern>/**/*</pattern>
+	</decorator>
+
+	<decorator name="main" page="main_decorator.jsp">
+		<pattern>/index.do</pattern>
+		<pattern>/*/main.do</pattern>
+	</decorator>
+	
+	<excludes>
+		<pattern>/common/log*</pattern>
+		<pattern>/member/registForm.do</pattern>
+	</excludes>
+
+</decorators>
