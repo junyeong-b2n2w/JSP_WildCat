@@ -9,7 +9,6 @@ public class MemberVO {
 	private String name; // 이름
 	private String email; // 이메일
 	private String phone; // 휴대전화번호
-	private String picture; // 사진
 	private String address; // 주소
 	private Date regDate; // 입사일
 	private String register; // 등록자
@@ -46,12 +45,6 @@ public class MemberVO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
-	public String getPicture() {
-		return picture;
-	}
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
 	public String getAddress() {
 		return address;
 	}
@@ -85,7 +78,7 @@ public class MemberVO {
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", pwd=" + pwd + ", name=" + name + ", email=" + email + ", phone=" + phone
-				+ ", picture=" + picture + ", address=" + address + ", regDate=" + regDate + ", register=" + register
+			 + ", address=" + address + ", regDate=" + regDate + ", register=" + register
 				+ ", authority=" + authority + ", enabled=" + enabled + "]";
 	}
 

@@ -54,7 +54,7 @@
           </div>
           <!-- /.col -->
           <div class="col-4">
-            <button type="submit" class="btn btn-primary btn-block">들어가자냥</button>
+            <button type="submit" class="btn btn-warning btn-block">들어가자냥</button>
           </div>
           <!-- /.col -->
         </div>

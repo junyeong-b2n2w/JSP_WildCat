@@ -49,7 +49,6 @@ public class MemberModifyAction implements Action{
 			String name = request.getParameter("name");
 			String pwd = request.getParameter("pwd");
 			String email = request.getParameter("email");
-			String picture = "noImage.jpg";
 			String phone = "";   
 			
 	      for(String data : request.getParameterValues("phone")) {
@@ -68,7 +67,6 @@ public class MemberModifyAction implements Action{
 	        memberModi.setPwd(pwd);
 	        memberModi.setName(name);
 	        memberModi.setEmail(email);
-	        memberModi.setPicture(picture);
 	        memberModi.setPhone(phone);
 			
 			

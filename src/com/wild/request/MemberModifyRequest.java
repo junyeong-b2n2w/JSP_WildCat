@@ -11,7 +11,6 @@ public class MemberModifyRequest {
 	private String name; // 이름
 	private String email; // 이메일
 	private String phone; // 휴대전화번호
-	private File picture; // 사진 파일 경로. 파일
 	private String oldPicture; // 이전 사진 파일
 	private String uploadPicture; // 변경된 사진 파일
 	
@@ -22,13 +21,6 @@ public class MemberModifyRequest {
 		member.setName(this.name);
 		member.setPhone(this.phone);
 		member.setEmail(this.email);
-		
-		if(uploadPicture != null && !uploadPicture.isEmpty()) { //이미지 변경후 
-			member.setPicture(this.picture.getName());
-			System.out.println("12313");
-		}else {
-			member.setPicture(this.oldPicture);
-		}
 		
 		return member;
 	}
@@ -62,12 +54,6 @@ public class MemberModifyRequest {
 	}
 	public void setPhone(String phone) {
 		this.phone = phone;
-	}
-	public File getPicture() {
-		return picture;
-	}
-	public void setPicture(File picture) {
-		this.picture = picture;
 	}
 	public String getOldPicture() {
 		return oldPicture;

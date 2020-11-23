@@ -40,7 +40,7 @@
 	
 	<update id="updateMember" parameterType="member">
 		update member set pwd=#{pwd},email=#{email},phone=#{phone}
-		,name=#{name}, picture=#{picture}
+		,name=#{name}
 		<if test="authority != null">
 			,authority=#{authority}
 		</if>

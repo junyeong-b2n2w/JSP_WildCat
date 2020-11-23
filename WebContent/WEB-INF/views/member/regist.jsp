@@ -101,7 +101,7 @@
          
           <!-- /.col -->
           <div class="col-12 mb-3">
-            <button type="button" onclick="submit_go();" class="btn btn-primary btn-block">동료가될거다냥</button>
+            <button type="button" onclick="submit_go();" class="btn btn-warning btn-block">동료가될거다냥</button>
           </div>
           <!-- /.col -->
         </div>
