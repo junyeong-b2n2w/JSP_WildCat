@@ -3,7 +3,7 @@
     
     
     <div class="text-center " style="padding:20px 10px;">
-<h1><i class="fas fa-paw"></i> 자유게시판</h1>
+<h1><i class="fas fa-paw"></i> 게시판</h1>
 </div>
 
 

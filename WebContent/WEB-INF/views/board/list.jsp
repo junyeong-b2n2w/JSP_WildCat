@@ -43,21 +43,19 @@
 		    		<table class="table table-bordered">
 		    			<tr>
 		                	<th scope="col">글번호</th>
+		                	<th scope="col">카테고리</th>
 		                	<th scope="col">글 제목</th>
 		                	<th scope="col">작성자</th>
 		                	<th scope="col">작성일</th>
 		                	<th scope="col">조회수</th> <!-- yyyy-MM-dd  -->
 		               	</tr>
 		               	<tr>
-		               		<td>
-		               			1
-		               		</td>
+		               		<td>1</td>
+		               		<td>대분류>중분류>소분류</td>
 		               		<td><a href="#">글 제목 1</a> </td>
 		               		<td>작성자 1 </td>
-		               		<td>작성일</td>
-		               		<td>
-		               			2013-12-12
-		               		</td>
+		               		<td>2013-12-12</td>
+		               		<td>1</td>
 		               	</tr>
 		               
 		               

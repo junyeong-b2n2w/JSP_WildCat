@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 </div>
- <footer class="main-footer " style="margin-left:50px;margin-right:50px;">
+ <footer class="main-footer" style="margin-top:20px;margin-left:50px;margin-right:50px;">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
     눈누냔

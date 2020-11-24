@@ -27,7 +27,7 @@
   <nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left:50px;margin-right:50px;">
     <a href="<%=request.getContextPath() %>/" class="navbar-brand">
 	<strong><i class="fas fa-paw"></i>
-        <span class="brand-text font-weight-light">와일드 냥</span></strong>
+        <span class="brand-text font-weight-light"><strong>와일드</strong> 냥</span></strong>
       </a>
     
  
