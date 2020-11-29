@@ -49,10 +49,10 @@
 					<div class="card-footer d-flex flex-row-reverse ">		
 						<div>				
 						<c:if test="${loginUser.id eq board.writer }">
-							<button type="button" id="modifyBtn" class="btn btn-warning">수정하기</button>						
-						    <button type="button" id="removeBtn" class="btn btn-warning">삭제하기</button>		
+							<button type="button" id="modifyBtn" class="btn btn-light">수정하기</button>						
+						    <button type="button" id="removeBtn" class="btn btn-light">삭제하기</button>		
 						    </c:if>			    
-						    <button type="button" id="listBtn" class="btn btn-primary">리스트로</button>
+						    <button type="button" id="listBtn" class="btn btn-outline-dark">리스트로</button>
 						</div>
 					</div>									
 				</div><!-- end card -->				

@@ -14,7 +14,6 @@
 
 
 <script src ="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
 </body>
 </html>

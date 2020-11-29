@@ -6,18 +6,16 @@
 <script type="text/x-handlebars-template"  id="reply-list-template" >
 {{#each .}}
 					<div class="replyLi">
-						<div class="d-inlineblock">&gt;&gt;</div>
 						<div class="callout callout-warning d-inlineblock" data-rno={{rno}}>
-		                  <p class="d-inline"><strong style="display:none;">{{rno}}</strong><i class="fa fa-user"></i>&nbsp;{{replyer}}</p>
+		                  <p class="d-inline"><strong style="display:none;">{{rno}}</strong>   <i class="fas  fa-angle-double-right" style="color:blue;display:{{isPadding prno}};">&nbsp;&nbsp;</i> <i class="fa fa-user"></i>&nbsp;{{replyer}}</p>
 		                  <span class="time float-right">
-						    	<span>
-						    		<i class="fa fa-clock"></i>{{regDate}}
+						    	<span style="color:lightgray;">
+						    		{{prettifyDate regDate}}
 						    	</span>
-							 		<a class="btn btn-primary btn-xs" id="modifyReplyBtn" data-rno={{rno}} data-pron={{prno}}
-										style="display:{{ replyer}};"
+							 		<a class="text-gray" id="modifyReplyBtn" data-rno={{rno}} data-pron={{prno}}
+										style="display:{{loginUserCheck replyer}};"
 							    		data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">수정</a>
-							    	<a class="btn btn-warning btn-xs" id="reReplyBtn" data-rno={{rno}} data-pron={{prno}}
-										style="display:{{ replyer}};"
+							    	<a class="text-gray" id="reReplyBtn" data-rno={{rno}} data-pron={{prno}}
 							    		data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">답글</a>
 						  </span>
 		                  
@@ -89,6 +87,28 @@ var printData=function(replyArr, target, templateObject){
 	$('.replyLi').remove();
 	target.after(html);
 }
+
+
+Handlebars.registerHelper(
+	"prettifyDate", function(timeValue){
+	var dateObj=new Date(timeValue);
+	var year=dateObj.getFullYear();
+	var month = dateObj.getMonth()+1;
+	var date=dateObj.getDate();
+	var hour = dateObj.getHours();
+	var min = dateObj.getMinutes();
+	return String(year).substr(2,2) + "/"+month+"/"+date+" "+hour+":"+min;
+	})
+	
+Handlebars.registerHelper(
+	"loginUserCheck",function(replyer){
+		return "${loginUser.id}"==replyer ? "visible" : "none"; 
+	})	
+	
+Handlebars.registerHelper(
+	"isPadding",function(prno){
+		return prno ? "visible" : "none"; 
+	})	
 
 
 //reply pagination
