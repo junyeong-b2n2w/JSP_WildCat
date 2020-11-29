@@ -10,7 +10,10 @@
 <!-- AdminLTE App -->
 <script src="<%=request.getContextPath()%>/resources/bootstrap/dist/js/adminlte.min.js"></script>
 <!-- handlebars -->
+<!-- summernote Editer -->
 
+
+<script src ="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 
 </body>

@@ -20,6 +20,7 @@
 <!-- handlebars -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+<script src ="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote.min.js"></script>
 
 <%@ include file="footer_js.jsp" %>
 </body>

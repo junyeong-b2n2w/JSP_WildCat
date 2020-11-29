@@ -6,14 +6,12 @@
 <h1><i class="fas fa-paw"></i> 게시판</h1>
 </div>
 
+<div class="row">
+<%@ include file="/WEB-INF/views/include/sideMenu.jsp" %>
 
-
-<div class="row mx-0">
-
-
-
-<iframe id="if" frameborder="0" scrolling="0" src="list.do"
- 			style="top:0px; left:0px; bottom:0px; 
- 			height:100%;width:100%; border:0px;min-height:500px;"></iframe>
+<div class="col-10">
+<iframe id="if" frameborder="0" scrolling="0" src=""
+ 			style="position:absolute; top:0px; left:0px; bottom:0px; 
+ 			height:100%;width:100%; border:0px; min-height:500px;"></iframe>
 </div>
-    
+</div>

@@ -48,6 +48,8 @@
 	<input type="hidden" name="perPageNum" value="${cri.perPageNum }"/>
 	<input type="hidden" name="searchType" value="${cri.searchType }"/>
 	<input type="hidden" name="keyword" value="${cri.keyword }"/>
+	<input type="hidden" name="gb" value="${cri.gb }"/>
+	<input type="hidden" name="category" value="${cri.category }"/>
 </form>
 
 <script>
@@ -62,6 +64,8 @@ function searchList_go(page, url){
 	jobForm.find("[name='perPageNum']").val($('select[name="perPageNum"]').val());
 	jobForm.find("[name='searchType']").val($('select[name="searchType"]').val());
 	jobForm.find("[name='keyword']").val($('div.input-group>input[name="keyword"]').val());
+	jobForm.find("[name='gb']").val($('div.input-group>input[name="gb"]').val());
+	jobForm.find("[name='category']").val($('select[name="category"]').val());
 	jobForm.attr("method","post");
 	
 	if(url){

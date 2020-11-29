@@ -4,7 +4,7 @@
     
 <script type="text/x-handlebars-template"  id="subMenu-list-template" >
 {{#each .}}
-	<a href="javascript:goPage('{{murl}}', '{{mcode}}');" class="nav-link subMenu">
+	<a href="javascript:goPage('{{murl}}', '{{mcode}}' , '{{mname}}');" class="nav-link subMenu">
              <p class="text-dark" style="margin-top:8px;margin-bottom:8px;"><i class="fas fa-paw"></i> {{mname }}</p>
         </a>     
 
@@ -15,7 +15,7 @@
 <script type="text/x-handlebars-template"  id="mainMenu-list-template" >
 {{#each .}}
  	<li class="nav-item d-none d-sm-inline-block">
-        <a href="javascript:subMenu('{{mcode}}');location.href='<%=request.getContextPath()%>{{murl}}';"
+        <a href="javascript:subMenu('{{mcode}}');location.href='<%=request.getContextPath()%>{{murl}}?mCode={{mcode}}';"
         	onclick=""
          class="nav-link"><i class="fas fa-paw"></i> {{mname}}</a>
       </li>
@@ -61,7 +61,7 @@
 		
 	}
 	
-	function goPage(url, mCode){
+	function goPage(url, mCode, mname){
 		//HTML5 브라우저에서 사용가능
 		if(typeof(history.pushState) == 'function'){
 			//현재주소를 가져온다
@@ -73,11 +73,17 @@
 				renewURL += "?mCode=" + mCode;
 			}
 			
+			
 			//페이지를 리로드 하지 않고 페이지 주소만 변경할때 사용
 			history.pushState(mCode, null, renewURL);
 			
 		}else{
-			location.hash = "#" + mCode;
+			location.hash = "#" + mCode ;
+		}
+		
+		//게시판에 구분 주기
+		if(mCode.substring(0,4) == 'M020'){
+			url += "?gb=" + mname;
 		}
 		
 		$('#if').attr("src", "<%=request.getContextPath()%>"+url);
@@ -86,5 +92,10 @@
 
 	mainMenu();
 	subMenu('<%=request.getParameter("mCode")%>'.substring(0,3)+"0000");
+
+	
+	
+	
+	
 	
 </script>

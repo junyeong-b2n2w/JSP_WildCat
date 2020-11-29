@@ -5,7 +5,7 @@
 
  
  
- <div class="col-5 col-sm-3 mr-10 " style="height:800px;">
+ <div class="col-2" style="height:800px;">
                <div class="nav flex-column nav-tabs text-center h-100 subMenuList" id="vert-tabs-tab" role="tablist" aria-orientation="vertical">
                </div>
 </div>
