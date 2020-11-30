@@ -145,7 +145,6 @@
 </div>
 
 
-<%@ include file="detail_js.jsp" %>
 <%@ include file="reply_js.jsp" %>
 
 

@@ -5,7 +5,7 @@
 	
 	<select id="selectReplyList" parameterType="int" resultType="reply">
 	
-		SELECT *
+		SELECT reply.*, level
 		FROM reply
 		where bno=#{bno}
 		START WITH prno IS NULL

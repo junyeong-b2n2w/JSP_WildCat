@@ -11,6 +11,7 @@ public class ReplyVO {
 	private String replyText;
 	private Date regDate;
 	private Date updateDate;
+	private int level;
 
 	public ReplyVO() {
 	}
@@ -24,6 +25,14 @@ public class ReplyVO {
 		this.replyText = replyText;
 		this.regDate = regDate;
 		this.updateDate = updateDate;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
 	}
 
 	public int getRno() {

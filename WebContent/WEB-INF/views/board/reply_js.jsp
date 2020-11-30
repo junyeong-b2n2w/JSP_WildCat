@@ -5,9 +5,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
 <script type="text/x-handlebars-template"  id="reply-list-template" >
 {{#each .}}
-					<div class="replyLi">
+					<div class="replyLi" style="margin-left:{{replyPadding level}}px;">
 						<div class="callout callout-warning d-inlineblock" data-rno={{rno}}>
-		                  <p class="d-inline"><strong style="display:none;">{{rno}}</strong>   <i class="fas  fa-angle-double-right" style="color:blue;display:{{isPadding prno}};">&nbsp;&nbsp;</i> <i class="fa fa-user"></i>&nbsp;{{replyer}}</p>
+		                  <p class="d-inline"><strong style="display:none;">{{rno}}</strong>   <i class="fas  fa-angle-double-right" style="color:blue;display:{{rereIcon prno}};">&nbsp;&nbsp;</i> <i class="fa fa-user"></i>&nbsp;{{replyer}}</p>
 		                  <span class="time float-right">
 						    	<span style="color:lightgray;">
 						    		{{prettifyDate regDate}}
@@ -27,6 +27,32 @@
 
 <script>
 window.onload=function(){
+	var formObj = $("form[role='form']");
+
+	$('button#modifyBtn').on('click',function(evnet){
+		//alert('modify btn click');
+		formObj.attr({
+			'action':'modifyForm.do',
+			'method':'post'
+		});
+		formObj.submit();
+	});
+	
+	$("#removeBtn").on("click", function(){
+		var answer = confirm("정말 삭제하시겠습니까?");
+		if(answer){		
+			formObj.attr("action", "remove.do");
+			formObj.attr("method", "post");
+			formObj.submit();
+		}
+	});
+	
+	$("#listBtn").on("click", function(){
+		window.opener.location.reload(true);
+		window.close();
+	});
+	
+	
 	var replyPage=1;
 	
 	
@@ -62,7 +88,7 @@ window.onload=function(){
 				"replyer":replyer,
 				"replyText":replyText
 		}
-		alert(JSON.stringify(data));
+		//alert(JSON.stringify(data));
 		
 		$.ajax({
 			url:"<%=request.getContextPath()%>/replies/add.do",
@@ -106,10 +132,15 @@ Handlebars.registerHelper(
 	})	
 	
 Handlebars.registerHelper(
-	"isPadding",function(prno){
+	"rereIcon",function(prno){
 		return prno ? "visible" : "none"; 
 	})	
-
+Handlebars.registerHelper(
+	"replyPadding",function(level){
+		return (level * 15) - 15 	
+	})
+	
+	
 
 //reply pagination
 
