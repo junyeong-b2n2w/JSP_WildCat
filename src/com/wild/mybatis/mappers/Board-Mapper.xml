@@ -55,7 +55,7 @@
 	
 	<select id="selectSearchBoardList" resultType="board">
 		select
-		* 
+		board.*, (select count(rno) from reply where bno = board.bno) replycnt 
 		from board
 		where bno is not null
 		and gb like '${gb}'

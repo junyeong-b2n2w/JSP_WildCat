@@ -92,8 +92,7 @@
 							<td style="color:gray;">${board.category }</td>
 							<td id="boardTitle" style="text-align:left;max-width: 100px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
 							<a href="detail.do?bno=${board.bno }">
-								<span class="col-sm-12 ">${board.title }
-								</span>
+								<span class=" ">${board.title }</span><span>&nbsp; [ ${board.replycnt } ]</span>
 							</a>
 							</td>
 							<td>${board.writer }</td>
