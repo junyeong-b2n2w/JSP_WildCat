@@ -6,7 +6,7 @@
  	
  	
  	<div class="container" style="margin-top:20px; max-width:1500px; font-size:0.85rem">
- 		<img src="<%=request.getContextPath() %>/resources/i/maincat.jpg" width="600px" height="100px" alt="메인고양이"/>
+ 		<img src="<%=request.getContextPath() %>/resources/i/maincat.jpg" width="100%" height="100px" style="margin-bottom:20px" alt="메인고양이"/>
  		
  		
  		<div class="row">
