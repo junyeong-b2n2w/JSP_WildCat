@@ -32,10 +32,17 @@
 		values(#{rno}, #{bno},#{prno},#{replyer},#{replyText})
 	</update>	
 	
+	
+	<update id="insertNewReply" >
+		insert into 
+		reply(rno,bno,replyer,replyText)
+		values(#{rno}, #{bno},#{replyer},#{replyText})
+	</update>	
+	
 	<update id="updateReply" >
 		update reply 
 		set 
-		replyText=#{replyText}	
+		replyText=#{replyText},	
 		updatedate=sysdate
 		where rno=#{rno}
 	</update>

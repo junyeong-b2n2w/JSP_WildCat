@@ -65,25 +65,13 @@
 				<div class="card card-info">					
 					<div class="card-body">
 					
-						<div id="repliesDiv"></div>
+						<div id="repliesDiv">
 						
 						
-						<div class="callout callout-warning replyLi" data-rno={{rno}}>
-		                  <h5 class="d-inline"><strong style="display:none;">{{rno}}</strong><i class="fa fa-user"></i>{{replyer}}</h5>
-		                  <span class="time float-right">
-						    	<span>
-						    		<i class="fa fa-clock"></i>{{regDate}}
-						    	</span>
-							 		<a class="btn btn-primary btn-xs" id="modifyReplyBtn" data-rno={{rno}} data-pron={{prno}}
-										style="display:{{ replyer}};"
-							    		data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">수정</a>
-							    	<a class="btn btn-warning btn-xs" id="reReplyBtn" data-rno={{rno}} data-pron={{prno}}
-							    		data-replyer={{replyer}} data-toggle="modal" data-target="#modifyModal">답글</a>
-						  </span>
-						<hr>
-		                  
-		                  <p id="{{rno}}-replytext">{{replyText}}</p>
-		                </div>
+						
+						
+						</div>
+					
 		                
 		                
 						  		
@@ -130,15 +118,37 @@
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" style="display:none;"></h4>
+           <span>수정하기</span>
         <button type="button" class="close" data-dismiss="modal">&times;</button>        
       </div>
       <div class="modal-body" data-rno>
         <p><input type="text" id="replytext" class="form-control"></p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-info" id="replyModBtn">Modify</button>
-        <button type="button" class="btn btn-danger" id="replyDelBtn">DELETE</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-light" id="replyModBtn">수정</button>
+        <button type="button" class="btn btn-light" id="replyDelBtn">삭제</button>
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">닫기</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="replyModal" class="modal modal-default fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" style="display:none;"></h4>
+        <span>답글쓰기</span>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>        
+      </div>
+      <div class="modal-body" id="replyPrno" data-prno>
+        <p><input type="text" id="rereplytext" class="form-control"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" id="reReplyBtn">답글달기</button>
+        <button type="button" class="btn btn-outline-dark" data-dismiss="modal">닫기</button>
       </div>
     </div>
   </div>

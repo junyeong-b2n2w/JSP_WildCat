@@ -1,8 +1,6 @@
 package com.wild.action.reply;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -10,12 +8,13 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wild.action.Action;
-import com.wild.request.SearchCriteria;
+import com.wild.dto.ReplyVO;
+import com.wild.request.ModifyReplyRequset;
 import com.wild.service.ReplyService;
 
-public class ReplyListAction implements Action{
+public class ReplyModifyAction implements Action {
+
 	private ReplyService replyService;
-	
 	public void setReplyService(ReplyService replyService) {
 		this.replyService = replyService;
 	}
@@ -25,30 +24,26 @@ public class ReplyListAction implements Action{
 			throws ServletException, IOException {
 		String url = "";
 		
-		int bno = Integer.parseInt(request.getParameter("bno")); 
-		int page = Integer.parseInt(request.getParameter("page")); 
+		ObjectMapper mapper = new ObjectMapper();
 		
-		SearchCriteria cri = new SearchCriteria();
-		cri.setPage(page);
-		cri.setPerPageNum(20);
+		ModifyReplyRequset replyReq 
+			= mapper.readValue(request.getReader(), ModifyReplyRequset.class);
+		
+		System.out.println(replyReq);
+		
+		ReplyVO reply = replyReq.toReplyVO();
+		
+		System.out.println(reply);
 		
 		try {
-			Map<String, Object> dataMap = replyService.getReplyList(bno, cri);
-			
-			ObjectMapper mapper = new ObjectMapper();
-			
-			response.setContentType("application/json;charset=utf-8");
-			PrintWriter out = response.getWriter();
-			out.println(mapper.writeValueAsString(dataMap));
-			out.close();
-			
-			
+			replyService.modifyReply(reply);
 		} catch (Exception e) {
 			e.printStackTrace();
-			url=null;
+			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
 		}
-		
+				
 		
 		return url;
 	}
+
 }

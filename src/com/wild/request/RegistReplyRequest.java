@@ -32,6 +32,7 @@ public class RegistReplyRequest {
 	
 	public ReplyVO toReplyVO() {
 		ReplyVO reply = new ReplyVO();
+		
 		reply.setPrno(prno);
 		reply.setBno(bno);
 		reply.setReplyer(replyer);

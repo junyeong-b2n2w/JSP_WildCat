@@ -2,7 +2,6 @@ package com.wild.action.reply;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.SQLException;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.wild.action.Action;
 import com.wild.dao.ReplyDAO;
+import com.wild.request.DeleteReplyRequest;
 import com.wild.request.PageMaker;
-import com.wild.request.RegistReplyRequest;
 import com.wild.request.SearchCriteria;
 import com.wild.service.ReplyService;
 
-public class ReplyRegistAction implements Action {
+public class ReplyRemoveAction implements Action {
 
 	private ReplyService replyService;
 	public void setReplyService(ReplyService replyService) {
@@ -31,35 +30,35 @@ public class ReplyRegistAction implements Action {
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		String url="";
+
+		String url = "";
 		
-		ObjectMapper mapper=new ObjectMapper();
-		
-		RegistReplyRequest replyReq 
-		= mapper.readValue(request.getReader(), RegistReplyRequest.class);
-		
-		
-		
-		response.setContentType("text/plain;charset=utf-8");
-		PrintWriter out=response.getWriter();
+		ObjectMapper mapper = new ObjectMapper();
+		DeleteReplyRequest removeReq
+			= mapper.readValue(request.getReader(), DeleteReplyRequest.class);
 		
 		try {
-			replyService.registReply(replyReq.toReplyVO());
-			
+			replyService.removeReply(removeReq.getRno());
 			
 			PageMaker pageMaker = new PageMaker();
 			pageMaker.setCri(new SearchCriteria());
-			pageMaker.setTotalCount(replyDAO.countReply(replyReq.toReplyVO().getBno()));	
+			pageMaker.setTotalCount(replyDAO.countReply(removeReq.getBno()));
 			
-			int realEndPage = pageMaker.getRealEndPage();		
-			out.println(realEndPage);
+			int realEndPage = pageMaker.getRealEndPage();
 			
-		} catch (SQLException e) {
+			int page = removeReq.getPage();
+			if(page>realEndPage) {page=realEndPage;}
+			
+			response.setContentType("text/plain;charset=utf-8");
+			PrintWriter out = response.getWriter();
+			
+			out.print(page);
+			out.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 			response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-			e.printStackTrace();					
-		}finally {
-			if(out!=null)out.close();
-		}	
+		}
 		
 		return url;
 	}

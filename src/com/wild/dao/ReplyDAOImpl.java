@@ -55,7 +55,12 @@ public class ReplyDAOImpl implements ReplyDAO{
 	@Override
 	public void insertReply(ReplyVO reply) throws SQLException {
 		SqlSession sqlSession = sqlSessionFactory.openSession(true);
-		sqlSession.update("Reply-Mapper.insertReply", reply);
+		
+		if(reply.getPrno() == 0) {
+			sqlSession.update("Reply-Mapper.insertNewReply", reply);
+		}else {
+			sqlSession.update("Reply-Mapper.insertReply", reply);
+		}
 		sqlSession.close();
 	}
 
