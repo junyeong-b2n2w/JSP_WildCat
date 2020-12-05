@@ -15,5 +15,6 @@
 
 <script src ="<%=request.getContextPath() %>/resources/bootstrap/plugins/summernote/summernote.min.js"></script>
 
+
 </body>
 </html>

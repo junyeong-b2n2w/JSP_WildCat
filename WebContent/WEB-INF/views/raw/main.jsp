@@ -86,9 +86,17 @@
              <div class="form-group">
                   <label>select2 찾기 </label>
 					
-					<select name="rp_airlinecd" id="rp_airlinecd" class="form-control isNotNull" data-value="<?php echo @$_POST['rp_type']?>">
-					    <option value="">선택</option>
+					<select class="js-states form-control ">
+  
 					</select>
+            
+            <script>
+            	window.onload=function(){
+                $('.js-states').select2();
+            
+            	}
+            </script>
+            
 
 
  
@@ -106,7 +114,7 @@
 	<!-- div right -->
 	
 	<div class="col-4">
-	<div class="card card-warning">
+	<div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">급여 정보</h3>
               </div>
@@ -169,7 +177,7 @@
               <!-- /.card-body -->
             </div>
 	
-	<div class="card card-warning">
+	<div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">주요 비율</h3>
               </div>
@@ -215,201 +223,10 @@
               <!-- /.card-body -->
             </div>
 	
-	<div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title">비타민</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table class="table table-bordered">
-                  <thead class="text-center">                  
-                    <tr>
-                      <th>#</th>
-                      <th>Unit</th>
-                      <th>권장량</th>
-                      <th>일급여량</th>
-                      <th>RDI (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody style="font-size:0.8em;">
-                    <tr>
-                    	<td>비타민A</td>
-                    	<td>IU</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>비타민B6</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>비타민B12</td>
-                    	<td>mcg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>티아민</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>리보플라빈</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>나이아신</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>판토텐산</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>콜린</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>폴산</td>
-                    	<td>mcg<td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>비타민D</td>
-                    	<td>IU</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>비타민E</td>
-                    	<td>IU</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>비타민K</td>
-                    	<td>mcg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>타우린</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
 	
 	
 	
-	</div>
-	
-	
-	
-	
-	<!-- div right -->
-	<div class="col-4">
-	
-	
-		
-	
-			<div class="card card-warning">
-              <div class="card-header">
-                <h3 class="card-title">주요 영양 정보</h3>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table class="table table-bordered">
-                  <thead class="text-center">                  
-                    <tr>
-                      <th>#</th>
-                      <th>Unit</th>
-                      <th>권장량</th>
-                      <th>일급여량</th>
-                      <th>RDI (%)</th>
-                    </tr>
-                  </thead>
-                  <tbody style="font-size:0.8em;">
-                    <tr>
-                    	<td>단백질</td>
-                    	<td>g</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>탄수화물</td>
-                    	<td>g</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>식이섬유</td>
-                    	<td>g</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>당류</td>
-                    	<td>g</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>지방</td>
-                    	<td>g</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                    <tr>
-                    	<td>콜레스테롤</td>
-                    	<td>mg</td>
-                    	<td></td>
-                    	<td></td>
-                    	<td></td>
-                    </tr>
-                   
-                  </tbody>
-                </table>
-              </div>
-              <!-- /.card-body -->
-            </div>
-            
-            <div class="card card-warning">
+            <div class="card card-info">
               <div class="card-header">
                 <h3 class="card-title">미네랄</h3>
               </div>
@@ -511,7 +328,202 @@
               <!-- /.card-body -->
             </div>
 	
+	</div>
+	
+	
+	
+	
+	<!-- div right -->
+	<div class="col-4">
+	
+	
+		
+	
+			<div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">주요 영양 정보</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead class="text-center">                  
+                    <tr>
+                      <th>#</th>
+                      <th>Unit</th>
+                      <th>권장량</th>
+                      <th>일급여량</th>
+                      <th>RDI (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody style="font-size:0.8em;">
+                    <tr>
+                    	<td>단백질</td>
+                    	<td>g</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>탄수화물</td>
+                    	<td>g</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>식이섬유</td>
+                    	<td>g</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>당류</td>
+                    	<td>g</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>지방</td>
+                    	<td>g</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>콜레스테롤</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                   
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
             
+            <div class="card card-info">
+              <div class="card-header">
+                <h3 class="card-title">비타민</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered">
+                  <thead class="text-center">                  
+                    <tr>
+                      <th>#</th>
+                      <th>Unit</th>
+                      <th>권장량</th>
+                      <th>일급여량</th>
+                      <th>RDI (%)</th>
+                    </tr>
+                  </thead>
+                  <tbody style="font-size:0.8em;">
+                    <tr>
+                    	<td>비타민A</td>
+                    	<td>IU</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>비타민B6</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>비타민B12</td>
+                    	<td>mcg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>티아민</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>리보플라빈</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>나이아신</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>판토텐산</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>콜린</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+					<tr>
+						<td>폴산</td>
+						<td>mcg</td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+						<tr>
+                    	<td>비타민D</td>
+                    	<td>IU</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>비타민E</td>
+                    	<td>IU</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>비타민K</td>
+                    	<td>mcg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    <tr>
+                    	<td>타우린</td>
+                    	<td>mg</td>
+                    	<td></td>
+                    	<td></td>
+                    	<td></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+	
+
+
+	
+	
 	</div>
 </div>
 
