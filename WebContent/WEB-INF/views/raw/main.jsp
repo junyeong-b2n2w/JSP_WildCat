@@ -86,16 +86,11 @@
              <div class="form-group">
                   <label>select2 찾기 </label>
 					
-					<select class="js-states form-control ">
+					<select class="ingreList form-control ">
   
 					</select>
             
-            <script>
-            	window.onload=function(){
-                $('.js-states').select2();
-            
-            	}
-            </script>
+         
             
 
 
@@ -527,3 +522,4 @@
 	</div>
 </div>
 
+<%@ include file="main_js.jsp" %>

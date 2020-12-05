@@ -42,6 +42,14 @@
 		<param-name>replyDAO</param-name>
 		<param-value>com.wild.dao.ReplyDAOImpl</param-value>
 	</context-param>
+	<context-param>
+		<param-name>ingreService</param-name>
+		<param-value>com.wild.service.IngreServiceImpl</param-value>
+	</context-param>
+	<context-param>
+		<param-name>ingreDAO</param-name>
+		<param-value>com.wild.dao.IngreDAOImpl</param-value>
+	</context-param>
 	
 
 	<listener>

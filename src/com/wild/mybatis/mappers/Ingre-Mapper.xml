@@ -1,0 +1,19 @@
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Ingre-Mapper">
+	
+	<select id="selectIngreList" resultType="ingre">
+	
+		SELECT *
+		FROM ingredient
+	</select>
+
+	<select id="selectIngreByIngNo"  resultType="ingre" parameterType="int">
+			SELECT *
+		FROM ingredient
+		where ingno = #{ingNo}
+	</select>
+	
+
+</mapper>

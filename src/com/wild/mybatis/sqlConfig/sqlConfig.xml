@@ -13,6 +13,7 @@
 	  <typeAlias type="com.wild.dto.MenuVO" alias="menu" />
 	  <typeAlias type="com.wild.dto.BoardVO" alias="board" />
 	  <typeAlias type="com.wild.dto.ReplyVO" alias="reply" />
+	  <typeAlias type="com.wild.dto.IngreVO" alias="ingre" />
   </typeAliases>
 
   <environments default="dev">
@@ -32,5 +33,6 @@
   	<mapper resource="com/wild/mybatis/mappers/Menu-Mapper.xml"/>
   	<mapper resource="com/wild/mybatis/mappers/Board-Mapper.xml"/>
   	<mapper resource="com/wild/mybatis/mappers/Reply-Mapper.xml"/>
+  	<mapper resource="com/wild/mybatis/mappers/Ingre-Mapper.xml"/>
   </mappers>
 </configuration>
