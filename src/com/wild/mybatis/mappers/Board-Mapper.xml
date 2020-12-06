@@ -52,6 +52,27 @@
 		</if>
 	</sql>
 
+	<select id="selectHotBoard" parameterType="String" resultType="board">
+	
+	select board.* ,rownum from board
+	where rownum <![CDATA[ < ]]>= 5
+	and gb = '#{value}'
+	
+	order by viewcnt desc
+	
+	</select>
+	
+	<select id="selectNewBoard" parameterType="String" resultType="board">
+	
+	select board.* ,rownum from board
+	where rownum <![CDATA[ < ]]>= 5
+	and gb = '#{value}'
+	order by regdate desc
+	
+	
+	
+	</select>
+
 	
 	<select id="selectSearchBoardList" resultType="board">
 		select

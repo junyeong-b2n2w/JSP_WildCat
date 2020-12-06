@@ -16,6 +16,15 @@ public class BoardServiceImpl implements BoardService{
 		this.boardDAO=boardDAO;
 	}
 
+	@Override
+	public List<BoardVO> selectHotBoard(String gb) throws SQLException {
+		List<BoardVO> boardList=boardDAO.selectHotBoardCriteria(gb);
+		return boardList;
+	}@Override
+	public List<BoardVO> selectNewBoard(String gb) throws SQLException {
+		List<BoardVO> boardList=boardDAO.selectNewBoardCriteria(gb);
+		return boardList;
+	}
 	
 	@Override
 	public BoardVO getBoardForModify(int bno) throws SQLException {

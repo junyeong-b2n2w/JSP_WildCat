@@ -16,8 +16,15 @@ public class BoardVO {
 	private String attach;
 	
 	private int replycnt;
+	private int rownum;
 	
 	
+	public int getRownum() {
+		return rownum;
+	}
+	public void setRownum(int rownum) {
+		this.rownum = rownum;
+	}
 	public int getReplycnt() {
 		return replycnt;
 	}

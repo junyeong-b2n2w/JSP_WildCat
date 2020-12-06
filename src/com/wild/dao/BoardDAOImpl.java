@@ -17,6 +17,25 @@ public class BoardDAOImpl implements BoardDAO{
 	}
 	
 	@Override
+	public List<BoardVO> selectHotBoardCriteria(String gb) throws SQLException {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<BoardVO> boardList=
+				session.selectList("Board-Mapper.selectHotBoard",gb);
+		session.close();
+		
+		return boardList;
+	}
+	@Override
+	public List<BoardVO> selectNewBoardCriteria(String gb) throws SQLException {
+		SqlSession session = sqlSessionFactory.openSession();
+		List<BoardVO> boardList=
+				session.selectList("Board-Mapper.selectNewBoard",gb);
+		session.close();
+		
+		return boardList;
+	}
+	
+	@Override
 	public List<BoardVO> selectBoardCriteria(SearchCriteria cri) throws SQLException {
 		SqlSession session = sqlSessionFactory.openSession();
 		

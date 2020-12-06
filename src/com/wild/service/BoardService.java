@@ -2,6 +2,7 @@ package com.wild.service;
 
 
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Map;
 
 import com.wild.dto.BoardVO;
@@ -24,4 +25,10 @@ public interface BoardService {
 
 	// 삭제
 	void remove(int bno) throws SQLException;
+	
+	List<BoardVO> selectHotBoard(String gb) throws SQLException ;
+		
+	
+	List<BoardVO> selectNewBoard(String gb) throws SQLException ;
+
 }

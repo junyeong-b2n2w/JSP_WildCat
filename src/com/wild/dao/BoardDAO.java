@@ -24,4 +24,8 @@ public interface BoardDAO {
 
 	// board_seq.nextval 가져오기
 	int selectBoardSeqNext() throws SQLException;
+	
+	List<BoardVO> selectHotBoardCriteria(String gb) throws SQLException;
+	
+	List<BoardVO> selectNewBoardCriteria(String gb) throws SQLException;
 }
