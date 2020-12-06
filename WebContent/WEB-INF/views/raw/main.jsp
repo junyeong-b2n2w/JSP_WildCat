@@ -20,7 +20,7 @@
 	<div class="col-4">
 	
 	<!--고양이 정보 -->
-	<div class="card card-warning">
+	<div id="cat_info" class="card card-warning">
               <div class="card-header">
                 <h3 class="card-title">고양이 정보</h3>
               </div>
@@ -33,7 +33,7 @@
                       <!-- select -->
                       <div class="form-group">
                         <label>대분류</label>
-                        <select class="form-control">
+                        <select class="form-control" id = "mainCate">
                           <option value="">대분류 선택</option>
                           <option value="자묘">자묘</option>
                           <option value="성묘">성묘</option>
@@ -43,20 +43,20 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>소분류</label>
-                         <select class="form-control">
+                         <select class="form-control" id = "subCate">
 						    <option value="">선택</option>
 						    
 						    
-					 <option data-max="1.2" data-min="1.2">성묘(중성화)</option>
-					 <option data-max="1.4" data-min="1.4">성묘(비중성화)</option>
-					 <option data-max="1.6" data-min="1.6">성묘(활동적인)</option>
-					 <option data-max="1" data-min="1">비만체질</option>
-					 <option data-max="0.8" data-min="0.8">체중감량 필요</option>
-					 <option data-max="1.4" data-min="1.2">체중증량 필요</option>
-					 <option data-max="2" data-min="1.6">임신묘</option>
-					 <option data-max="6" data-min="2">수유묘</option>
-					 <option data-max="1" data-min="1">환자묘</option>
-					 <option data-max="1.4" data-min="1.2">성장기(12개월 이전)</option>
+					 <option value="1.2" data-min="1.2">성묘(중성화)</option>
+					 <option value="1.4" data-min="1.4">성묘(비중성화)</option>
+					 <option value="1.6" data-min="1.6">성묘(활동적인)</option>
+					 <option value="1" data-min="1">비만체질</option>
+					 <option value="0.8" data-min="0.8">체중감량 필요</option>
+					 <option value="1.4" data-min="1.2">체중증량 필요</option>
+					 <option value="2" data-min="1.6">임신묘</option>
+					 <option value="6" data-min="2">수유묘</option>
+					 <option value="1" data-min="1">환자묘</option>
+					 <option value="1.4" data-min="1.2">성장기(12개월 이전)</option>
 						</select>
                       </div>
                     </div>
@@ -68,13 +68,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>몸무게(kg)</label>
-                        <input type="text" class="form-control" placeholder="Enter ...">
+                        <input type="text" class="form-control" id="weight" placeholder="Enter ...">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>급여일수</label>
-                        <input type="text" class="form-control" placeholder="Enter ..." >
+                        <input type="text" class="form-control" id="feedday"  placeholder="Enter ..." >
                       </div>
                     </div>
                   </div>
@@ -162,8 +162,8 @@
                     <tr>
                     	<td>열량</td>
                     	<td>kcal</td>
-                    	<td></td>
-                    	<td></td>
+                    	<td id="rec_cal"></td>
+                    	<td id="rec_cal_day"></td>
                     	<td></td>
                     </tr>
                     <tr>
@@ -267,77 +267,77 @@
                     <tr>
                     	<td>칼슘</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_calcium"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>철</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_iron"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>마그네슘</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_magnesium"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>인</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_phosphorus"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>칼륨</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_potassium"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>나트륨</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_sodium"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>아연</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_zinc"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>구리</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_copper"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>망간</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_manganese"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>셀레늄</td>
                     	<td>mcg</td>
-                    	<td></td>
+                    	<td id="rec_selenium"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>요오드</td>
                     	<td>mcg</td>
-                    	<td></td>
+                    	<td id="rec_iodine"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
@@ -380,7 +380,7 @@
                     <tr>
                     	<td>단백질</td>
                     	<td>g</td>
-                    	<td></td>
+                    	<td id="rec_protein"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
@@ -408,14 +408,14 @@
                     <tr>
                     	<td>지방</td>
                     	<td>g</td>
-                    	<td></td>
+                    	<td id="rec_fat"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>콜레스테롤</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id=""></td>
                     	<td></td>
                     	<td></td>
                     </tr>
@@ -446,91 +446,91 @@
                     <tr>
                     	<td>비타민A</td>
                     	<td>IU</td>
-                    	<td></td>
+                    	<td id="rec_vitaminA"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>비타민B6</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_vitaminB6"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>비타민B12</td>
                     	<td>mcg</td>
-                    	<td></td>
+                    	<td id="rec_vitaminB12"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>티아민</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_thiamine"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>리보플라빈</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_riboflavin"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>나이아신</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_niacin"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>판토텐산</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_pantothenic_acid"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>콜린</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_choline"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
 					<tr>
 						<td>폴산</td>
 						<td>mcg</td>
-						<td></td>
+						<td id="rec_folic_acid"></td>
 						<td></td>
 						<td></td>
 					</tr>
 						<tr>
                     	<td>비타민D</td>
                     	<td>IU</td>
-                    	<td></td>
+                    	<td id="rec_vitaminD"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>비타민E</td>
                     	<td>IU</td>
-                    	<td></td>
+                    	<td id="rec_vitaminE"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>비타민K</td>
                     	<td>mcg</td>
-                    	<td></td>
+                    	<td id="rec_vitaminK"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>타우린</td>
                     	<td>mg</td>
-                    	<td></td>
+                    	<td id="rec_taurine"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
