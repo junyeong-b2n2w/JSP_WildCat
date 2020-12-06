@@ -92,30 +92,30 @@
 	function recommend_data(base , max_cal){
    			$('#rec_protein').text(	max_cal * 0.001 * base.protein );
    			$('#rec_fat').text(		max_cal * 0.001 * base.fat);
-   			$('#rec_calcium').text(		max_cal * 0.001 * base.calcium); 
+   			$('#rec_calcium').text(		max_cal  * base.calcium); 
    			$('#rec_phosphorus').text(max_cal * 0.001 * base.phosphorus);
-   			$('#rec_potassium').text(max_cal * 0.001 * base.potassium);
+   			$('#rec_potassium').text(max_cal * base.potassium);
    			$('#rec_sodium').text(max_cal * 0.001 * base.sodium);
-   			$('#rec_magnesium').text(max_cal * 0.001 * base.magnesium);
+   			$('#rec_magnesium').text(max_cal * base.magnesium);
    			$('#rec_iron').text(max_cal * 0.001 * base.iron);
    			$('#rec_copper').text(max_cal * 0.001 * base.copper);
    			$('#rec_manganese').text(max_cal * 0.001 * base.manganese);
-   			$('#rec_zinc').text(max_cal * 0.001 * base.zinc);
+   			$('#rec_zinc').text(max_cal  * base.zinc);
    			$('#rec_iodine').text(max_cal * 0.001 * base.iodine);
-   			$('#rec_selenium').text(max_cal * 0.001 * base.selenium);
+   			$('#rec_selenium').text(max_cal* base.selenium);
    			$('#rec_vitaminA').text(max_cal * 0.001 * base.vitaminA);
    			$('#rec_vitaminD').text(max_cal * 0.001 * base.vitaminD);
    			$('#rec_vitaminE').text(max_cal * 0.001 * base.vitaminE);
-   			$('#rec_vitaminK').text(max_cal * 0.001 * base.vitaminK);
+   			$('#rec_vitaminK').text(max_cal * base.vitaminK);
    			$('#rec_thiamine').text(max_cal * 0.001 * base.thiamine);
    			$('#rec_riboflavin').text(max_cal * 0.001 * base.riboflavin);
    			$('#rec_pantothenic_acid').text(max_cal * 0.001 * base.pantothenic_acid); 
    			$('#rec_niacin').text(max_cal * 0.001 * base.niacin);
    			$('#rec_vitaminB6').text(max_cal * 0.001 * base.vitaminB6);
-   			$('#rec_folic_acid').text(max_cal * 0.001 * base.folic_acid);
+   			$('#rec_folic_acid').text(max_cal  * base.folic_acid);
    			$('#rec_vitaminB12').text(max_cal * 0.001 * base.vitaminB12);
    			$('#rec_choline').text(max_cal * 0.001 * base.choline);
-   			$('#rec_taurine').text(max_cal * 0.001 * base.taurine);
+   			$('#rec_taurine').text(max_cal  * base.taurine);
    				}
    				
  	window.onload=function(){
@@ -169,10 +169,11 @@
                 		//cal	
                 	  var cal = $('#weight').val() * 30 + 70 ;
                 	  var max_cal = parseFloat($('#subCate').val()) * cal;
-                	
+                	  var water = 	($('#weight').val() ** 0.75) * 70 *1.2 ;
+                	  
                 	  console.log(max_cal)
                       $('#rec_cal').text(max_cal) ;
-                   
+                	  $('#rec_water').text(water) ;
                       if($('#mainCate').val()== "자묘"){
                     	  recommend_data( growth_base ,max_cal)
                       }else if($('#mainCate').val() == "성묘"){

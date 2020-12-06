@@ -176,14 +176,14 @@
                     <tr>
                     	<td>수분율</td>
                     	<td>%</td>
-                    	<td></td>
+                    	<td>70~80</td>
                     	<td></td>
                     	<td></td>
                     </tr>
                     <tr>
                     	<td>음수량</td>
                     	<td>ml</td>
-                    	<td></td>
+                    	<td id="rec_water"></td>
                     	<td></td>
                     	<td></td>
                     </tr>
