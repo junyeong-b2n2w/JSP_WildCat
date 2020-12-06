@@ -43,8 +43,20 @@
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>소분류</label>
-                         <select name="rp_airlinecd" id="rp_airlinecd" class="form-control isNotNull" data-value="<?php echo @$_POST['rp_type']?>">
+                         <select class="form-control">
 						    <option value="">선택</option>
+						    
+						    
+					 <option data-max="1.2" data-min="1.2">성묘(중성화)</option>
+					 <option data-max="1.4" data-min="1.4">성묘(비중성화)</option>
+					 <option data-max="1.6" data-min="1.6">성묘(활동적인)</option>
+					 <option data-max="1" data-min="1">비만체질</option>
+					 <option data-max="0.8" data-min="0.8">체중감량 필요</option>
+					 <option data-max="1.4" data-min="1.2">체중증량 필요</option>
+					 <option data-max="2" data-min="1.6">임신묘</option>
+					 <option data-max="6" data-min="2">수유묘</option>
+					 <option data-max="1" data-min="1">환자묘</option>
+					 <option data-max="1.4" data-min="1.2">성장기(12개월 이전)</option>
 						</select>
                       </div>
                     </div>
@@ -89,9 +101,23 @@
 					<select class="ingreList form-control ">
   
 					</select>
-            
-         
-            
+					
+         	<div class="form-group" style="margin-top:20px">
+                   <table class="table table-condensed">
+                  <thead>
+                    <tr>
+                      <th>식품 리스트</th>
+                      <th style="width: 120px"></th>
+                      <th style="width: 80px"></th>
+                    </tr>
+                  </thead>
+                  <tbody class="clickedItem" >
+                  
+                    
+                    
+                  </tbody>
+                </table>
+            </div>      
 
 
  
