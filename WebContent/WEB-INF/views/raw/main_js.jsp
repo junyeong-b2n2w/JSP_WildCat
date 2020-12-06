@@ -118,6 +118,65 @@
    			$('#rec_taurine').text(max_cal  * base.taurine);
    				}
    				
+   	function total_ingre(){
+   		 
+   		
+   		for( var i =0; i< calcArr.length; i++){
+   			//console.log(calcArr[i])
+   			
+   		
+	   		sum_arr = {		
+	   				"calcium":	( sum_arr.calcium ? sum_arr.calcium : 0 )+calcArr[i].calcium,
+	   				"calories": (sum_arr.calories ? sum_arr.calories	: 0 )+ calcArr[i].calories	,
+					"carbohydrates": (sum_arr.carbohydrates	? sum_arr.carbohydrates	: 0 )+ calcArr[i].carbohydrates	,
+					"cholesterol": (sum_arr.cholesterol	? sum_arr.cholesterol	: 0) + calcArr[i].cholesterol	,
+					"choline": (sum_arr.choline	? sum_arr.choline	: 0 )+ calcArr[i].choline	,
+					"copper": (sum_arr.copper	? sum_arr.copper	: 0 )+ calcArr[i].copper	,
+					"dietaryfiber":( sum_arr.dietaryfiber	? sum_arr.dietaryfiber	: 0 )+ calcArr[i].dietaryfiber	,
+					"fat": (sum_arr.fat	? sum_arr.fat	: 0 )+ calcArr[i].fat	,
+					"folate": (sum_arr.folate	? sum_arr.folate	: 0) + calcArr[i].folate	,
+					"iodine": (sum_arr.iodine	? sum_arr.iodine	: 0 )+ calcArr[i].iodine	,
+					"iron": (sum_arr.iron	? sum_arr.iron	: 0 )+ calcArr[i].iron	,
+					"magnesium": (sum_arr.magnesium	? sum_arr.magnesium	: 0 )+ calcArr[i].magnesium	,
+					"manganese": (sum_arr.manganese	? sum_arr.manganese	: 0 )+ calcArr[i].manganese	,
+					"niacin": (sum_arr.niacin	? sum_arr.niacin	: 0) + calcArr[i].niacin	,
+					"omega3": (sum_arr.omega3	? sum_arr.omega3	: 0) + calcArr[i].omega3	,
+					"omega6": (sum_arr.omega6	? sum_arr.omega6	: 0) + calcArr[i].omega6	,
+					"pantothenicacid": (sum_arr.pantothenicacid	? sum_arr.pantothenicacid	: 0 )+ calcArr[i].pantothenicacid	,
+					"phosphorus":( sum_arr.phosphorus	? sum_arr.phosphorus	: 0) + calcArr[i].phosphorus	,
+					"potassium":( sum_arr.potassium	? sum_arr.potassium	: 0)+ calcArr[i].potassium	,
+					"protein": (sum_arr.protein	? sum_arr.protein	: 0) + calcArr[i].protein	,
+					"riboflavin":( sum_arr.riboflavin	? sum_arr.riboflavin	: 0 )+ calcArr[i].riboflavin	,
+					"selenium": (sum_arr.selenium	? sum_arr.selenium	: 0 )+ calcArr[i].selenium	,
+					"sodium": (sum_arr.sodium	? sum_arr.sodium	: 0) + calcArr[i].sodium	,
+					"sugars": (sum_arr.sugars	? sum_arr.sugars	: 0) + calcArr[i].sugars	,
+					"taurine": (sum_arr.taurine	? sum_arr.taurine	: 0) + calcArr[i].taurine	,
+					"thiamin": (sum_arr.thiamin	? sum_arr.thiamin	: 0) + calcArr[i].thiamin	,
+					"vitaminA": (sum_arr.vitaminA	? sum_arr.vitaminA	: 0 )+ calcArr[i].vitaminA	,
+					"vitaminB6": (sum_arr.vitaminB6	? sum_arr.vitaminB6	: 0) + calcArr[i].vitaminB6	,
+					"vitaminB12": (sum_arr.vitaminB12	? sum_arr.vitaminB12	: 0) + calcArr[i].vitaminB12	,
+					"vitaminC": (sum_arr.vitaminC	? sum_arr.vitaminC	: 0 )+ calcArr[i].vitaminC	,
+					"vitaminD": (sum_arr.vitaminD	? sum_arr.vitaminD	: 0 )+ calcArr[i].vitaminD	,
+					"vitaminE": (sum_arr.vitaminE	? sum_arr.vitaminE	: 0 )+ calcArr[i].vitaminE	,
+					"vitaminK": (sum_arr.vitaminK	? sum_arr.vitaminK	: 0 )+ calcArr[i].vitaminK	,
+					"water": (sum_arr.water	? sum_arr.water	: 0 )+ calcArr[i].water	,
+					"zinc": (sum_arr.zinc	? sum_arr.zinc	: 0 )+ calcArr[i].zinc	,
+	   				
+	   				
+	   		}
+   		
+   			
+   			
+   		}
+   		
+   		console.log("sumarr", sum_arr);
+   		
+   	}			
+   	
+    calcArr = [];
+   	
+ 	sum_arr=[]
+    
  	window.onload=function(){
             	
             	
@@ -134,13 +193,14 @@
                 $('.ingreList').select2();
 
                 
-                calcArr = [];
+                //calcArr = [];
                 
                 $('.ingreList').on('select2:select',function(){
                 	
                 	$.getJSON("<%=request.getContextPath()%>/raw/ingre.do?ingNo="+ this.value ,function(data){
                			
                			clickedIngre(data, $('.clickedItem')  ,$('#ingre-item-template'));
+               			
                			const thisarr = {
                					...data[0],
                					value:0
@@ -148,6 +208,8 @@
                			
                			calcArr.push(thisarr);
                			//console.log(calcArr)
+               			
+               			
                		});	
                 	
                 	
@@ -155,8 +217,11 @@
             	
 
                 $('.clickedItem').on('change', 'td input[type="text"]', function(){
-                	console.log(this.value)
-                	console.log($(this).data("ingno"))
+                	
+                	var index = calcArr.findIndex(ingre => ingre.ingNo === $(this).data("ingno")); 
+                	calcArr[index].value = parseFloat(this.value)
+                	
+                	total_ingre();
                 })
                 
                 
@@ -221,3 +286,5 @@
             	}
             	
   </script>
+  
+  
