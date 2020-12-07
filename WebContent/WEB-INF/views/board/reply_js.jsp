@@ -122,7 +122,7 @@ window.onload=function(){
 	});
 	
 	$('#reReplyBtn').on('click',function(e){
-		var replyer=${loginUser.id}
+		var replyer=${loginUser.id}+""
 		var replyText=$('#rereplytext').val();
 		
 		if(replyText==""){
