@@ -6,7 +6,10 @@
 {{#each .}}
  <tr class="hot_freeBoard_tr">
 	                      <td style="width:20px;">{{rownum}}.</td>
-	                      <td><a href="board/detail.do?bno={{bno}}">[{{category}}]{{title}}</a></td>
+	                      <td><a href="javascript:detailOpener('<%=request.getContextPath()%>/boardr/detail.do?bno={{bno}}');">[{{category}}]{{title}} </a> 
+
+		&nbsp;<span class="badge bg-warning">{{replycnt}}</span>
+</td>
 	                    </tr>
 
 {{/each}}	

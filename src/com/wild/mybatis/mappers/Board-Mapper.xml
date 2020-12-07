@@ -54,7 +54,7 @@
 
 	<select id="selectHotBoard" resultType="board">
 	
-	select board.* , rownum from
+	select board.* ,  (select count(rno) from reply where bno = board.bno) replycnt ,rownum from
     (select * from board
 	where rownum <![CDATA[ < ]]>= 5
 	and gb = '${gb}'
@@ -64,7 +64,7 @@
 	
 	<select id="selectNewBoard" resultType="board">
 	
-	select board.* , rownum from
+	select board.* , (select count(rno) from reply where bno = board.bno) replycnt, rownum from
     (select * from board
 	where rownum <![CDATA[ < ]]>= 5
 	and gb = '${gb}'

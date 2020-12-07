@@ -405,6 +405,7 @@
             			
             			calcArr.splice(index,1);
             			$('#ing-'+ingNo).remove();
+            			
             		}
             		
             	}

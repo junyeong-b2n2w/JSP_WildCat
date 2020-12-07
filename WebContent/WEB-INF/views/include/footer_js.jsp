@@ -93,9 +93,13 @@
 	mainMenu();
 	subMenu('<%=request.getParameter("mCode")%>'.substring(0,3)+"0000");
 
-	
-	
-	
+	 
+	function detailOpener(url){
+		history.pushState(  url ,null,'<%=request.getContextPath()%>/board/main.do?mCode=M020000');
+		
+		$('#if').attr('src',url);		
+		window.popState();
+	}
 	
 	
 </script>
