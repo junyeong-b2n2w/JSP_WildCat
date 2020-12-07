@@ -90,32 +90,32 @@
    				
  	// 권장량 데이터   				
 	function recommend_data(base , max_cal){
-   			$('#rec_protein').text(	max_cal * 0.001 * base.protein );
-   			$('#rec_fat').text(		max_cal * 0.001 * base.fat);
-   			$('#rec_calcium').text(		max_cal  * base.calcium); 
-   			$('#rec_phosphorus').text(max_cal * 0.001 * base.phosphorus);
-   			$('#rec_potassium').text(max_cal * base.potassium);
-   			$('#rec_sodium').text(max_cal * 0.001 * base.sodium);
-   			$('#rec_magnesium').text(max_cal * base.magnesium);
-   			$('#rec_iron').text(max_cal * 0.001 * base.iron);
-   			$('#rec_copper').text(max_cal * 0.001 * base.copper);
-   			$('#rec_manganese').text(max_cal * 0.001 * base.manganese);
-   			$('#rec_zinc').text(max_cal  * base.zinc);
-   			$('#rec_iodine').text(max_cal * 0.001 * base.iodine);
-   			$('#rec_selenium').text(max_cal* base.selenium);
-   			$('#rec_vitaminA').text(max_cal * 0.001 * base.vitaminA);
-   			$('#rec_vitaminD').text(max_cal * 0.001 * base.vitaminD);
-   			$('#rec_vitaminE').text(max_cal * 0.001 * base.vitaminE);
-   			$('#rec_vitaminK').text(max_cal * base.vitaminK);
-   			$('#rec_thiamine').text(max_cal * 0.001 * base.thiamine);
-   			$('#rec_riboflavin').text(max_cal * 0.001 * base.riboflavin);
-   			$('#rec_pantothenic_acid').text(max_cal * 0.001 * base.pantothenic_acid); 
-   			$('#rec_niacin').text(max_cal * 0.001 * base.niacin);
-   			$('#rec_vitaminB6').text(max_cal * 0.001 * base.vitaminB6);
-   			$('#rec_folic_acid').text(max_cal  * base.folic_acid);
-   			$('#rec_vitaminB12').text(max_cal  * base.vitaminB12);
-   			$('#rec_choline').text(max_cal * 0.001 * base.choline);
-   			$('#rec_taurine').text(max_cal  * base.taurine);
+   			$('#rec_protein').text(	(max_cal * 0.001 * base.protein).toFixed(2) );
+   			$('#rec_fat').text(		(max_cal * 0.001 * base.fat ).toFixed(2));
+   			$('#rec_calcium').text(	(	max_cal  * base.calcium).toFixed(2)); 
+   			$('#rec_phosphorus').text( (max_cal * base.phosphorus).toFixed(2));
+   			$('#rec_potassium').text((max_cal * base.potassium).toFixed(2));
+   			$('#rec_sodium').text((max_cal * base.sodium).toFixed(2));
+   			$('#rec_magnesium').text((max_cal * base.magnesium).toFixed(2));
+   			$('#rec_iron').text((max_cal * 0.001 * base.iron).toFixed(2));
+   			$('#rec_copper').text((max_cal * 0.001 * base.copper).toFixed(2));
+   			$('#rec_manganese').text((max_cal * 0.001 * base.manganese).toFixed(2));
+   			$('#rec_zinc').text((max_cal  * base.zinc).toFixed(2));
+   			$('#rec_iodine').text( (max_cal * 0.001 * base.iodine ).toFixed(2));
+   			$('#rec_selenium').text((max_cal* base.selenium ).toFixed(2));
+   			$('#rec_vitaminA').text((max_cal * 0.001 * base.vitaminA ).toFixed(2));
+   			$('#rec_vitaminD').text((max_cal * 0.001 * base.vitaminD ).toFixed(2));
+   			$('#rec_vitaminE').text((max_cal * 0.001 * base.vitaminE ).toFixed(2));
+   			$('#rec_vitaminK').text((max_cal * base.vitaminK ).toFixed(2));
+   			$('#rec_thiamine').text((max_cal * 0.001 * base.thiamine ).toFixed(2));
+   			$('#rec_riboflavin').text((max_cal * 0.001 * base.riboflavin ).toFixed(2));
+   			$('#rec_pantothenic_acid').text((max_cal * 0.001 * base.pantothenic_acid ).toFixed(2)); 
+   			$('#rec_niacin').text((max_cal * 0.001 * base.niacin ).toFixed(2));
+   			$('#rec_vitaminB6').text((max_cal * 0.001 * base.vitaminB6 ).toFixed(2));
+   			$('#rec_folic_acid').text((max_cal  * base.folic_acid ).toFixed(2));
+   			$('#rec_vitaminB12').text((max_cal  * base.vitaminB12 ).toFixed(2));
+   			$('#rec_choline').text((max_cal * 0.001 * base.choline ).toFixed(2));
+   			$('#rec_taurine').text((max_cal  * base.taurine ).toFixed(2));
    				}
    				
    	function total_ingre(){
@@ -150,7 +150,7 @@
 					"protein": (sum_arr.protein	? sum_arr.protein	: 0) + calcArr[i].protein	* hud,
 					"riboflavin":( sum_arr.riboflavin	? sum_arr.riboflavin	: 0 )+ calcArr[i].riboflavin	* hud,
 					"selenium": (sum_arr.selenium	? sum_arr.selenium	: 0 )+ calcArr[i].selenium* hud,
-					"sodium": (sum_arr.sodium	? sum_arr.sodium	: 0) + calcArr[i].sodium	* hud * 1000,
+					"sodium": (sum_arr.sodium	? sum_arr.sodium	: 0) + calcArr[i].sodium	* hud,
 					"sugars": (sum_arr.sugars	? sum_arr.sugars	: 0) + calcArr[i].sugars	* hud,
 					"taurine": (sum_arr.taurine	? sum_arr.taurine	: 0) + calcArr[i].taurine	* hud,
 					"thiamin": (sum_arr.thiamin	? sum_arr.thiamin	: 0) + calcArr[i].thiamin	* hud,
@@ -173,153 +173,153 @@
    		
    		//--급여 정보 
    		//총량
-   		$('#tot_weight').text(sum_arr.weight);
-   		$('#day_weight').text( parseFloat( sum_arr.weight) / parseInt($('#feedday').val()));
+   		$('#tot_weight').text((sum_arr.weight).toFixed(2));
+   		$('#day_weight').text(( parseFloat( sum_arr.weight) / parseInt($('#feedday').val())).toFixed(2) ) ;
    		
    		//칼로리
-   		$('#tot_cal').text(sum_arr.calories)
-   		$('#day_cal').text( parseFloat( sum_arr.calories ) / parseInt( $('#feedday').val()));
+   		$('#tot_cal').text( (sum_arr.calories ).toFixed(2))
+   		$('#day_cal').text(( parseFloat( sum_arr.calories ) / parseInt( $('#feedday').val()) ).toFixed(2));
    		
    		//수분
-   		$('#tot_water').text(sum_arr.water)
-   		$('#day_water').text( parseFloat( sum_arr.water ) / parseInt( $('#feedday').val()));
-   		$('#day_water_per').text( parseFloat( $('#day_water').text() ) / parseFloat( $('#day_weight').text())  *100 )
-   		$('#day_water2').text( parseFloat($('#tot_water').text())   /   parseInt( $('#feedday').val())  )
+   		$('#tot_water').text( (sum_arr.water ).toFixed(2))
+   		$('#day_water').text( ( parseFloat( sum_arr.water ) / parseInt( $('#feedday').val()) ).toFixed(2));
+   		$('#day_water_per').text(( parseFloat( $('#day_water').text() ) / parseFloat( $('#day_weight').text())  *100 ).toFixed(2))
+   		$('#day_water2').text(( parseFloat($('#tot_water').text())   /   parseInt( $('#feedday').val())  ).toFixed(2))
    		
-   		$('#eat_water').text( parseFloat( $('#rec_water').text()) -  parseFloat( $('#day_water2').text()) )
+   		$('#eat_water').text(( parseFloat( $('#rec_water').text()) -  parseFloat( $('#day_water2').text()) ).toFixed(2))
    	
    		
    		
    		
    		//--주요 영양정보 
    		//단백질 
-   		$('#day_protein').text( parseFloat(sum_arr.protein) / parseInt( $('#feedday').val()))
-   		$('#rdi_protein').text( parseFloat(  $('#day_protein').text() ) /   parseFloat(  $('#rec_protein').text()  ) * 100 + " %" )
+   		$('#day_protein').text(( parseFloat(sum_arr.protein) / parseInt( $('#feedday').val()) ).toFixed(2))
+   		$('#rdi_protein').text( (parseFloat(  $('#day_protein').text() ) /   parseFloat(  $('#rec_protein').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//지방
    		
-   		$('#day_fat').text( parseFloat(sum_arr.fat) / parseInt( $('#feedday').val())   )
-   		$('#rdi_fat').text( parseFloat(  $('#day_fat').text() ) /   parseFloat(  $('#rec_fat').text()  ) * 100 + " %" )
+   		$('#day_fat').text( (parseFloat(sum_arr.fat) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_fat').text(( parseFloat(  $('#day_fat').text() ) /   parseFloat(  $('#rec_fat').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//콜레스테롤
-   		$('#day_cholesterol').text(parseFloat(sum_arr.carbohydrates) / parseInt( $('#feedday').val()) )
+   		$('#day_cholesterol').text( (parseFloat(sum_arr.carbohydrates) / parseInt( $('#feedday').val()) ).toFixed(2))
    		
    		
    		//--미네랄 
    		//칼슘
-   		$('#day_calcium').text( parseFloat(sum_arr.calcium) / parseInt( $('#feedday').val())   )
-   		$('#rdi_calcium').text( parseFloat(  $('#day_calcium').text() ) /   parseFloat(  $('#rec_calcium').text()  ) * 100 + " %" )
+   		$('#day_calcium').text(( parseFloat(sum_arr.calcium) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_calcium').text(( parseFloat(  $('#day_calcium').text() ) /   parseFloat(  $('#rec_calcium').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//철
-   		$('#day_iron').text( parseFloat(sum_arr.iron) / parseInt( $('#feedday').val())   )
-   		$('#rdi_iron').text( parseFloat(  $('#day_iron').text() ) /   parseFloat(  $('#rec_iron').text()  ) * 100 + " %" )
+   		$('#day_iron').text( (parseFloat(sum_arr.iron) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_iron').text( (parseFloat(  $('#day_iron').text() ) /   parseFloat(  $('#rec_iron').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//마그네슘
-   		$('#day_magnesium').text( parseFloat(sum_arr.magnesium) / parseInt( $('#feedday').val())   )
-   		$('#rdi_magnesium').text( parseFloat(  $('#day_magnesium').text() ) /   parseFloat(  $('#rec_magnesium').text()  ) * 100 + " %" )
+   		$('#day_magnesium').text( (parseFloat(sum_arr.magnesium) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_magnesium').text( (parseFloat(  $('#day_magnesium').text() ) /   parseFloat(  $('#rec_magnesium').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//인
-		$('#day_phosphorus').text( parseFloat(sum_arr.phosphorus) / parseInt( $('#feedday').val())   )
-   		$('#rdi_phosphorus').text( parseFloat(  $('#day_phosphorus').text() ) /   parseFloat(  $('#rec_phosphorus').text()  ) * 100 + " %" )
+		$('#day_phosphorus').text(( parseFloat(sum_arr.phosphorus) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_phosphorus').text(( parseFloat(  $('#day_phosphorus').text() ) /   parseFloat(  $('#rec_phosphorus').text()  ) * 100).toFixed(2) + " %" )
    		
    		//칼륨
-   		$('#day_potassium').text( parseFloat(sum_arr.potassium) / parseInt( $('#feedday').val())   )
-   		$('#rdi_potassium').text( parseFloat(  $('#day_potassium').text() ) /   parseFloat(  $('#rec_potassium').text()  ) * 100 + " %" )
+   		$('#day_potassium').text( (parseFloat(sum_arr.potassium) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_potassium').text( (parseFloat(  $('#day_potassium').text() ) /   parseFloat(  $('#rec_potassium').text()  ) * 100).toFixed(2) + " %" )
    		
    		//나트륨
-   		$('#day_sodium').text( parseFloat(sum_arr.sodium) / parseInt( $('#feedday').val())   )
-   		$('#rdi_sodium').text( parseFloat(  $('#day_sodium').text() ) /   parseFloat(  $('#rec_sodium').text()  ) * 100 + " %" )
+   		$('#day_sodium').text(( parseFloat(sum_arr.sodium) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_sodium').text(( parseFloat(  $('#day_sodium').text() ) /   parseFloat(  $('#rec_sodium').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//아연
-   		$('#day_zinc').text( parseFloat(sum_arr.zinc) / parseInt( $('#feedday').val())   )
-   		$('#rdi_zinc').text( parseFloat(  $('#day_zinc').text() ) /   parseFloat(  $('#rec_zinc').text()  ) * 100 + " %" )
+   		$('#day_zinc').text(( parseFloat(sum_arr.zinc) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_zinc').text( (parseFloat(  $('#day_zinc').text() ) /   parseFloat(  $('#rec_zinc').text()  ) * 100).toFixed(2) + " %" )
    		
    		//구리
-   		$('#day_copper').text( parseFloat(sum_arr.copper) / parseInt( $('#feedday').val())   )
-   		$('#rdi_copper').text( parseFloat(  $('#day_copper').text() ) /   parseFloat(  $('#rec_copper').text()  ) * 100 + " %" )
+   		$('#day_copper').text(( parseFloat(sum_arr.copper) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_copper').text(( parseFloat(  $('#day_copper').text() ) /   parseFloat(  $('#rec_copper').text()  ) * 100).toFixed(2) + " %" )
    	
    		//망간
-   		$('#day_manganese').text( parseFloat(sum_arr.manganese) / parseInt( $('#feedday').val())   )
-   		$('#rdi_manganese').text( parseFloat(  $('#day_manganese').text() ) /   parseFloat(  $('#rec_manganese').text()  ) * 100 + " %" )
+   		$('#day_manganese').text(( parseFloat(sum_arr.manganese) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_manganese').text(( parseFloat(  $('#day_manganese').text() ) /   parseFloat(  $('#rec_manganese').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		//셀레늄
-   		$('#day_selenium').text( parseFloat(sum_arr.selenium) / parseInt( $('#feedday').val())   )
-   		$('#rdi_selenium').text( parseFloat(  $('#day_selenium').text() ) /   parseFloat(  $('#rec_selenium').text()  ) * 100 + " %" )
+   		$('#day_selenium').text( (parseFloat(sum_arr.selenium) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_selenium').text( (parseFloat(  $('#day_selenium').text() ) /   parseFloat(  $('#rec_selenium').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		//요오드 
-   		$('#day_iodine').text( parseFloat(sum_arr.iodine) / parseInt( $('#feedday').val())   )
-   		$('#rdi_iodine').text( parseFloat(  $('#day_iodine').text() ) /   parseFloat(  $('#rec_iodine').text()  ) * 100 + " %" )
+   		$('#day_iodine').text(( parseFloat(sum_arr.iodine) / parseInt( $('#feedday').val())   ).toFixed(2))
+   		$('#rdi_iodine').text(( parseFloat(  $('#day_iodine').text() ) /   parseFloat(  $('#rec_iodine').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		
    		//비타민 
    		//비타민A
-   		$('#day_vitaminA').text( parseFloat(sum_arr.vitaminA) / parseInt( $('#feedday').val())   )
-   		$('#rdi_vitaminA').text( parseFloat(  $('#day_vitaminA').text() ) /   parseFloat(  $('#rec_vitaminA').text()  ) * 100 + " %" )
+   		$('#day_vitaminA').text(( parseFloat(sum_arr.vitaminA) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_vitaminA').text(( parseFloat(  $('#day_vitaminA').text() ) /   parseFloat(  $('#rec_vitaminA').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//비타민B6
-   		$('#day_vitaminB6').text( parseFloat(sum_arr.vitaminB6) / parseInt( $('#feedday').val())   )
-   		$('#rdi_vitaminB6').text( parseFloat(  $('#day_vitaminB6').text() ) /   parseFloat(  $('#rec_vitaminB6').text()  ) * 100 + " %" )
+   		$('#day_vitaminB6').text( (parseFloat(sum_arr.vitaminB6) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_vitaminB6').text( (parseFloat(  $('#day_vitaminB6').text() ) /   parseFloat(  $('#rec_vitaminB6').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		//비타민B12
-   		$('#day_vitaminB12').text( parseFloat(sum_arr.vitaminB12) / parseInt( $('#feedday').val()) / 1000  )
-   		$('#rdi_vitaminB12').text( parseFloat(  $('#day_vitaminB12').text() ) /   parseFloat(  $('#rec_vitaminB12').text()  ) * 100 + " %" )
+   		$('#day_vitaminB12').text( (parseFloat(sum_arr.vitaminB12) / parseInt( $('#feedday').val()) / 1000  ).toFixed(2))
+   		$('#rdi_vitaminB12').text( (parseFloat(  $('#day_vitaminB12').text() ) /   parseFloat(  $('#rec_vitaminB12').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//티아민
-   		$('#day_thiamine').text( parseFloat(sum_arr.thiamin) / parseInt( $('#feedday').val())   )
-   		$('#rdi_thiamine').text( parseFloat(  $('#day_thiamine').text() ) /   parseFloat(  $('#rec_thiamine').text()  ) * 100 + " %" )
+   		$('#day_thiamine').text( (parseFloat(sum_arr.thiamin) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_thiamine').text( (parseFloat(  $('#day_thiamine').text() ) /   parseFloat(  $('#rec_thiamine').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//리보플라빈
-   		$('#day_riboflavin').text( parseFloat(sum_arr.riboflavin) / parseInt( $('#feedday').val())   )
-   		$('#rdi_riboflavin').text( parseFloat(  $('#day_riboflavin').text() ) /   parseFloat(  $('#rec_riboflavin').text()  ) * 100 + " %" )
+   		$('#day_riboflavin').text(( parseFloat(sum_arr.riboflavin) / parseInt( $('#feedday').val()) ).toFixed(2)  )
+   		$('#rdi_riboflavin').text(( parseFloat(  $('#day_riboflavin').text() ) /   parseFloat(  $('#rec_riboflavin').text()  ) * 100).toFixed(2) + " %" )
    		
    		//나이아신
-   		$('#day_niacin').text( parseFloat(sum_arr.niacin) / parseInt( $('#feedday').val())   )
-   		$('#rdi_niacin').text( parseFloat(  $('#day_niacin').text() ) /   parseFloat(  $('#rec_niacin').text()  ) * 100 + " %" )
+   		$('#day_niacin').text( (parseFloat(sum_arr.niacin) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_niacin').text( (parseFloat(  $('#day_niacin').text() ) /   parseFloat(  $('#rec_niacin').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//판토텐산
-   		$('#day_pantothenic_acid').text( parseFloat(sum_arr.pantothenicacid) / parseInt( $('#feedday').val())   )
-   		$('#rdi_pantothenic_acid').text( parseFloat(  $('#day_pantothenic_acid').text() ) /   parseFloat(  $('#rec_pantothenic_acid').text()  ) * 100 + " %" )
+   		$('#day_pantothenic_acid').text(( parseFloat(sum_arr.pantothenicacid) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_pantothenic_acid').text( (parseFloat(  $('#day_pantothenic_acid').text() ) /   parseFloat(  $('#rec_pantothenic_acid').text()  ) * 100).toFixed(2) + " %" )
    		
    		//콜린
-   		$('#day_choline').text( parseFloat(sum_arr.choline) / parseInt( $('#feedday').val())   )
-   		$('#rdi_choline').text( parseFloat(  $('#day_choline').text() ) /   parseFloat(  $('#rec_choline').text()  ) * 100 + " %" )
+   		$('#day_choline').text(( parseFloat(sum_arr.choline) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_choline').text(( parseFloat(  $('#day_choline').text() ) /   parseFloat(  $('#rec_choline').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		//폴산
-   		$('#day_folic_acid').text( parseFloat(sum_arr.folate) / parseInt( $('#feedday').val())   )
-   		$('#rdi_folic_acid').text( parseFloat(  $('#day_folic_acid').text() ) /   parseFloat(  $('#rec_folic_acid').text()  ) * 100 + " %" )
+   		$('#day_folic_acid').text(( parseFloat(sum_arr.folate) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_folic_acid').text(( parseFloat(  $('#day_folic_acid').text() ) /   parseFloat(  $('#rec_folic_acid').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//비타민D
-   		$('#day_vitaminD').text( parseFloat(sum_arr.vitaminD) / parseInt( $('#feedday').val())   )
-   		$('#rdi_vitaminD').text( parseFloat(  $('#day_vitaminD').text() ) /   parseFloat(  $('#rec_vitaminD').text()  ) * 100 + " %" )
+   		$('#day_vitaminD').text(( parseFloat(sum_arr.vitaminD) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_vitaminD').text(( parseFloat(  $('#day_vitaminD').text() ) /   parseFloat(  $('#rec_vitaminD').text()  ) * 100).toFixed(2) + " %" )
    		
    		//비타민E
-   		$('#day_vitaminE').text( parseFloat(sum_arr.vitaminE) / parseInt( $('#feedday').val())   )
-   		$('#rdi_vitaminE').text( parseFloat(  $('#day_vitaminE').text() ) /   parseFloat(  $('#rec_vitaminE').text()  ) * 100 + " %" )
+   		$('#day_vitaminE').text( ( parseFloat(sum_arr.vitaminE) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_vitaminE').text( (parseFloat(  $('#day_vitaminE').text() ) /   parseFloat(  $('#rec_vitaminE').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		//비타민K
-   		$('#day_vitaminK').text( parseFloat(sum_arr.vitaminK) / parseInt( $('#feedday').val())   )
-   		$('#rdi_vitaminK').text( parseFloat(  $('#day_vitaminK').text() ) /   parseFloat(  $('#rec_vitaminK').text()  ) * 100 + " %" )
+   		$('#day_vitaminK').text( (parseFloat(sum_arr.vitaminK) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_vitaminK').text( (parseFloat(  $('#day_vitaminK').text() ) /   parseFloat(  $('#rec_vitaminK').text()  ) * 100).toFixed(2) + " %" )
    		
    		//타우린
-   		$('#day_taurine').text( parseFloat(sum_arr.taurine) / parseInt( $('#feedday').val())   )
-   		$('#rdi_taurine').text( parseFloat(  $('#day_taurine').text() ) /   parseFloat(  $('#rec_taurine').text()  ) * 100 + " %" )
+   		$('#day_taurine').text( (parseFloat(sum_arr.taurine) / parseInt( $('#feedday').val())  ).toFixed(2) )
+   		$('#rdi_taurine').text( (parseFloat(  $('#day_taurine').text() ) /   parseFloat(  $('#rec_taurine').text()  ) * 100 ).toFixed(2)+ " %" )
    		
    		
    		//주요 비율
    		// 인 : 칼슘 
-   		$('#tot_phosphorus').text( parseFloat(sum_arr.phosphorus) /  parseInt( $('#feedday').val()) )
-   		$('#tot_calcium').text( parseFloat(sum_arr.calcium) /  parseInt( $('#feedday').val()) )
-   		$('#pho_cal').text(  parseFloat(  $('#tot_calcium').text() ) /   parseFloat(  $('#tot_phosphorus').text()  ) )
+   		$('#tot_phosphorus').text( (parseFloat(sum_arr.phosphorus) /  parseInt( $('#feedday').val())).toFixed(2) )
+   		$('#tot_calcium').text( (parseFloat(sum_arr.calcium) /  parseInt( $('#feedday').val())).toFixed(2) )
+   		$('#pho_cal').text(  (parseFloat(  $('#tot_calcium').text() ) /   parseFloat(  $('#tot_phosphorus').text()  ) ).toFixed(2))
    		
    		//오3 오6
-   		$('#tot_omega3').text( parseFloat(sum_arr.omega3) /  parseInt( $('#feedday').val()) )
-   		$('#tot_omega6').text( parseFloat(sum_arr.omega6) /  parseInt( $('#feedday').val()) )
-   		$('#om3_om6').text(  parseFloat(  $('#tot_omega6').text() ) /   parseFloat(  $('#tot_omega3').text()  )  )
+   		$('#tot_omega3').text(( parseFloat(sum_arr.omega3) /  parseInt( $('#feedday').val()) ).toFixed(2))
+   		$('#tot_omega6').text( (parseFloat(sum_arr.omega6) /  parseInt( $('#feedday').val()) ).toFixed(2))
+   		$('#om3_om6').text(  (parseFloat(  $('#tot_omega6').text() ) /   parseFloat(  $('#tot_omega3').text()  )  ).toFixed(2))
    		
    		
    	}			

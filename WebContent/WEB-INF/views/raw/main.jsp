@@ -35,7 +35,7 @@
                         <select class="form-control" id = "mainCate">
                           <option value="">대분류 선택</option>
                           <option  value="자묘">자묘</option>
-                          <option selected value="성묘">성묘</option>
+                          <option  value="성묘">성묘</option>
                         </select>
                       </div>
                     </div>
@@ -49,7 +49,7 @@
 					 <option value="1.2" data-min="1.2">성묘(중성화)</option>
 					 <option value="1.4"  data-min="1.4">성묘(비중성화)</option>
 					 <option value="1.6" data-min="1.6">성묘(활동적인)</option>
-					 <option value="1" selected data-min="1">비만체질</option>
+					 <option value="1"  data-min="1">비만체질</option>
 					 <option value="0.8" data-min="0.8">체중감량 필요</option>
 					 <option value="1.4" data-min="1.2">체중증량 필요</option>
 					 <option value="2" data-min="1.6">임신묘</option>
@@ -67,13 +67,13 @@
                       <!-- text input -->
                       <div class="form-group">
                         <label>몸무게(kg)</label>
-                        <input type="text" class="form-control" value="1" id="weight" placeholder="Enter ...">
+                        <input type="text" class="form-control" id="weight" placeholder="Enter ...">
                       </div>
                     </div>
                     <div class="col-sm-6">
                       <div class="form-group">
                         <label>급여일수</label>
-                        <input type="text" class="form-control" value="4" id="feedday"  placeholder="Enter ..." >
+                        <input type="text" class="form-control"  id="feedday"  placeholder="Enter ..." >
                       </div>
                     </div>
                   </div>

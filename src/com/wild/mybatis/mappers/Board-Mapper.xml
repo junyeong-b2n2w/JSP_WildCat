@@ -52,22 +52,23 @@
 		</if>
 	</sql>
 
-	<select id="selectHotBoard" parameterType="String" resultType="board">
+	<select id="selectHotBoard" resultType="board">
 	
-	select board.* ,rownum from board
+	select board.* , rownum from
+    (select * from board
 	where rownum <![CDATA[ < ]]>= 5
-	and gb = '#{value}'
-	
-	order by viewcnt desc
+	and gb = '${gb}'
+	order by viewcnt desc) board
 	
 	</select>
 	
-	<select id="selectNewBoard" parameterType="String" resultType="board">
+	<select id="selectNewBoard" resultType="board">
 	
-	select board.* ,rownum from board
+	select board.* , rownum from
+    (select * from board
 	where rownum <![CDATA[ < ]]>= 5
-	and gb = '#{value}'
-	order by regdate desc
+	and gb = '${gb}'
+	order by regdate desc) board
 	
 	
 	

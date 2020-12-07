@@ -1,7 +1,9 @@
 package com.wild.dao;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.RowBounds;
 import org.apache.ibatis.session.SqlSession;
@@ -19,8 +21,10 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public List<BoardVO> selectHotBoardCriteria(String gb) throws SQLException {
 		SqlSession session = sqlSessionFactory.openSession();
+		Map<String, String> gbMap = new HashMap<String, String>();
+		gbMap.put("gb", gb);
 		List<BoardVO> boardList=
-				session.selectList("Board-Mapper.selectHotBoard",gb);
+				session.selectList("Board-Mapper.selectHotBoard",gbMap);
 		session.close();
 		
 		return boardList;
@@ -28,8 +32,10 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public List<BoardVO> selectNewBoardCriteria(String gb) throws SQLException {
 		SqlSession session = sqlSessionFactory.openSession();
+		Map<String, String> gbMap = new HashMap<String, String>();
+		gbMap.put("gb", gb);
 		List<BoardVO> boardList=
-				session.selectList("Board-Mapper.selectNewBoard",gb);
+				session.selectList("Board-Mapper.selectNewBoard",gbMap);
 		session.close();
 		
 		return boardList;
